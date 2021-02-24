@@ -13,7 +13,7 @@ function browsersync(){
     server:{
       baseDir:'app/'
     },
-    notofy:false
+    notify:false
   })
 }
 
@@ -41,20 +41,20 @@ function scripts(){
   .pipe(browserSync.stream())
 }
 
-function images(){
+function images() {
   return src('app/images/**/*.*')
-  .pipe(imagemin([
-    imagemin.gifsicle({interlaced: true}),
-    imagemin.mozjpeg({quality: 75, progressive: true}),
-    imagemin.optipng({optimizationLevel: 5}),
-    imagemin.svgo({
+    .pipe(imagemin([
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
         plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}
+          { removeViewBox: true },
+          { cleanupIDs: false }
         ]
-    })
-  ]))
-  .pipe(dest('dist/images'))
+      })
+    ]))
+    .pipe(dest('dist/images'))
 }
 
 function build(){

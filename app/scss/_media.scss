@@ -4,8 +4,8 @@
       font-size: 175px;
       line-height: 1;
     }
-    &__top {
-      padding-bottom: 50px;
+    &__bottom {
+      margin-top: 135px;
     }
   }
 }
@@ -19,9 +19,7 @@
     &__subtitle {
       font-size: 24px;
     }
-    &__top {
-      padding-bottom: 50px;
-    }
+  
     &__text {
       font-size: 18px;
       max-width: 450px;
@@ -51,13 +49,8 @@
 @media (max-width: 960px) {
   .header {
     &__top {
-      position: fixed;
-      background-image: url(../images/bg-top.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center top;
+    padding-top: 20px;
       z-index: 5;
-      padding: 25px 0;
     }
     &__title {
       font-size: 125px;
@@ -67,9 +60,6 @@
       font-size: 16px;
       max-width: 400px;
       padding-top: 20px;
-    }
-    &__bottom {
-      margin-top: 135px;
     }
   }
   .logo,
@@ -192,6 +182,9 @@
     }
     &__subtitle {
       font-size: 16px;
+    }
+    &__bottom {
+      margin-top: 160px;
     }
     &__text {
       max-width: 300px;
