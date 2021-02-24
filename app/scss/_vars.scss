@@ -1,0 +1,55 @@
+$bg: #f7f7f7;
+$title: #333333;
+$default: #565656;
+
+%title{
+font-size: 60px;
+line-height: 90px;
+color: $title;
+text-transform: uppercase;
+@extend %catamaran-900;
+}
+
+%catamaran-700 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 700;
+}
+
+%catamaran-900 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 900;
+}
+
+%muli-700 {
+  font-family: "Muli", sans-serif;
+  font-weight: 700;
+}
+
+%muli-600 {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+}
+
+%muli-400 {
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+}
+
+%muli-300 {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+}
+
+%bg {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

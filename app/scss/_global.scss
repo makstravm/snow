@@ -1,0 +1,31 @@
+body {
+  color: $default;
+  @extend %muli-300;
+  font-size: 18px;
+  line-height: 32px;
+  background-color: $bg;
+}
+.container {
+  max-width: 1230px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.title {
+  @extend %title;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 960px) {
+  .title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
