@@ -338,6 +338,7 @@
     margin: 0 auto;
   }
 }
+
 .slick-dots {
   display: flex;
   justify-content: center;
@@ -433,7 +434,7 @@
     display: inline-block;
     margin-right: 30px;
     margin-bottom: 35px;
-   path{
+    path{
       fill:#979797;
       transition: all .3s;
     }
@@ -444,10 +445,12 @@
     }
   }
 }
+
 .map__box {
   margin-left: auto;
   width: 100%;
 }
+
 #map {
   height: 640px;
   width: 100%;
