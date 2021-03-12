@@ -22,19 +22,21 @@
     align-items: center;
     position: fixed;
     background-color: transparent;
-    transition: all .3s;
+    transition: all 0.3s;
     z-index: 5;
     &.dark-header {
       background-color: #157eae;
       padding-top: 15px;
     }
   }
-  &__title-box{
+  &__title-box {
     text-align: center;
     transform: translateY(100%);
-    transition: all .9s;
-    &._active{
+
+    transition: all 0.9s 0.7s;
+    &._active {
       transform: translateY(0);
+      opacity: 1;
     }
   }
   &__subtitle {
@@ -238,10 +240,10 @@
     flex-wrap: wrap;
     padding-top: 40px;
   }
-  &__item{
+  &__item {
     transform: scale(0);
-    transition: all .5s;
-    &._active{
+    transition: all 0.5s;
+    &._active {
       transform: scale(1);
     }
   }
