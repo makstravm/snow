@@ -1,3 +1,4 @@
+
 $(function () {
     $('.menu__btn, .menu__link').on('click', function () {
         $('.menu__list').toggleClass('menu--active');
@@ -16,6 +17,67 @@ $(function () {
     });
 });
 
+
+
+
+const animItems = document.querySelectorAll(`._anim-items`);
+if (animItems.length > 0) {
+    window.addEventListener(`scroll`, animOnScroll);
+
+    function animOnScroll() {
+        for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index];
+            const animItemHeight = animItem.offsetHeight;
+            const animItemOffSet = offset(animItem).top;
+            const animStart = 4;
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+            if (animItemHeight > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart;
+            }
+            if ((pageYOffset > animItemOffSet - animItemPoint) && pageYOffset < (animItemOffSet + animItemHeight)) {
+                animItem.classList.add(`_active`);
+                
+            }
+        }
+    }
+    function offset(el) {
+        const rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+    animOnScroll();
+}
+
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 100) {
+        $(".header__top").addClass("dark-header");
+    } else {
+        $(".header__top").removeClass("dark-header");
+    }
+});
+
+var showCount = true;
+    var countBox = ".school__box";
+    $(window).on("scroll load resize", function(){
+        if(!showCount) return false;
+        var w_top = $(window).scrollTop();
+        var e_top = $(countBox).offset().top;
+        var w_height = $(window).height();
+        var d_height = $(document).height();
+
+        var e_height = $(countBox).outerHeight();
+
+        if(w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
+            $(".school__number").spincrement({
+                thousandSeparator: "",
+                duration: 1200
+            });
+            showCount = false;
+        }
+    });
 
 function initMap() {
     const uluru = { lat: 47.81041678987403, lng: 13.048546926366598 };
@@ -319,7 +381,7 @@ function initMap() {
             ]
 
     });
-    const image ="../images/marker.png";
+    const image = "../images/marker.png";
     const marker = new google.maps.Marker({
         position: uluru,
         map: map,
