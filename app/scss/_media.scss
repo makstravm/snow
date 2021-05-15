@@ -4,8 +4,8 @@
       font-size: 175px;
       line-height: 1;
     }
-    &__top {
-      padding-bottom: 50px;
+    &__bottom {
+      margin-top: 135px;
     }
   }
 }
@@ -19,9 +19,7 @@
     &__subtitle {
       font-size: 24px;
     }
-    &__top {
-      padding-bottom: 50px;
-    }
+  
     &__text {
       font-size: 18px;
       max-width: 450px;
@@ -51,17 +49,22 @@
 @media (max-width: 960px) {
   .header {
     &__top {
-      position: relative;
+    padding-top: 20px;
+      z-index: 5;
     }
     &__title {
       font-size: 125px;
-      letter-spacing: 0;
+      letter-spacing: -3px;
     }
     &__text {
       font-size: 16px;
       max-width: 400px;
       padding-top: 20px;
     }
+  }
+  .logo,
+  .menu__btn {
+    z-index: 1;
   }
   .menu {
     width: 100%;
@@ -84,21 +87,34 @@
       order: 1;
       position: absolute;
       left: 0;
+      top: 0;
       right: 0;
-      top: 60px;
-      background-color: #005c90;
-      z-index: 5;
+      background-image: url(../images/bg-top.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
       transform: translateY(-200%);
       transition: all 0.3s;
     }
     &__list.menu--active {
       transform: translateY(0);
+      padding-top: 80px;
     }
     &__link {
       line-height: 1;
       display: block;
       padding: 20px;
     }
+  }
+  .footer {
+    flex-direction: column;
+    padding: 0;
+  }
+  .map__box {
+    order: -1;
+  }
+  #map {
+    height: 400px;
   }
 }
 @media (max-width: 875px) {
@@ -108,11 +124,18 @@
       max-width: 500px;
     }
   }
+  .footer {
+    &__contact {
+      height: auto;
+    }
+  }
 }
 @media (max-width: 660px) {
   .header {
     &__title {
       font-size: 75px;
+      letter-spacing: 0;
+      padding-bottom: 25px;
     }
     &__subtitle {
       font-size: 18px;
@@ -129,18 +152,39 @@
       line-height: 24px;
     }
   }
+  .offer,
+  .gallery,
+  .team {
+    padding: 40px 0;
+  }
+  .testimonials {
+    padding: 80px 0;
+  }
   .offer__item {
     margin-bottom: 60px;
+  }
+  .footer {
+    flex-direction: column;
+    padding: 0;
+    &__phone,
+    &__clock,
+    &__address,
+    &__mail {
+      font-size: 14px;
+    }
+  }
 }
-}
-
 @media (max-width: 480px) {
   .header {
     &__title {
+      padding-bottom: 0;
       font-size: 50px;
     }
     &__subtitle {
       font-size: 16px;
+    }
+    &__bottom {
+      margin-top: 160px;
     }
     &__text {
       max-width: 300px;
@@ -154,7 +198,6 @@
       margin: 0 auto 35px;
     }
   }
-  
   .school {
     &__title {
       text-align: center;
