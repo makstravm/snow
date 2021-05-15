@@ -1,5 +1,5 @@
 @import "vars";
-@import "font";
+@import "fonts";
 @import "reset";
 @import "libs";
 @import "global";
@@ -10,25 +10,32 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  &__top {
-    max-width: 1700px;
-    width: 100%;
-    padding: 35px 10px 10px;
-    margin: 0 auto;
-    display: flex;
+  &__top-wrapper {
     left: 0;
     right: 0;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     background-color: transparent;
     transition: all 0.3s;
     z-index: 5;
+    width: 100%;
     &.dark-header {
       background-color: #157eae;
-      padding-top: 15px;
+      .header__top {
+        padding-top: 15px;
+      }
     }
   }
+  &__top {
+    max-width: 1230px;
+    padding: 0 20px;
+    padding: 35px 10px 10px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
   &__title-box {
     text-align: center;
     transform: translateY(100%);

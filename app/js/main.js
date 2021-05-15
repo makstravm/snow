@@ -13,7 +13,11 @@ $(function () {
 
     $('.testimonials__slider').slick({
         arrows: false,
-        dots: true
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
     });
 });
 
@@ -36,7 +40,7 @@ if (animItems.length > 0) {
             }
             if ((pageYOffset > animItemOffSet - animItemPoint) && pageYOffset < (animItemOffSet + animItemHeight)) {
                 animItem.classList.add(`_active`);
-                
+
             }
         }
     }
@@ -53,31 +57,32 @@ $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 100) {
-        $(".header__top").addClass("dark-header");
+        $(".header__top-wrapper").addClass("dark-header");
     } else {
-        $(".header__top").removeClass("dark-header");
+        $(".header__top-wrapper").removeClass("dark-header");
     }
 });
 
 var showCount = true;
-    var countBox = ".school__box";
-    $(window).on("scroll load resize", function(){
-        if(!showCount) return false;
-        var w_top = $(window).scrollTop();
-        var e_top = $(countBox).offset().top;
-        var w_height = $(window).height();
-        var d_height = $(document).height();
+var countBox = ".school__box";
+$(window).on("scroll load resize", function () {
+    if (!showCount) return false;
+    var w_top = $(window).scrollTop();
+    var e_top = $(countBox).offset().top;
+    var w_height = $(window).height();
+    var d_height = $(document).height();
 
-        var e_height = $(countBox).outerHeight();
+    var e_height = $(countBox).outerHeight();
 
-        if(w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
-            $(".school__number").spincrement({
-                thousandSeparator: "",
-                duration: 1200
-            });
-            showCount = false;
-        }
-    });
+    if (w_top + w_height - 20   >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+        $(".school__number").spincrement({
+            thousandSeparator: "",
+            duration: 1500,
+            from: 0
+        });
+        showCount = false;
+    }
+});
 
 function initMap() {
     const uluru = { lat: 47.81041678987403, lng: 13.048546926366598 };
