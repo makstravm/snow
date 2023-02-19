@@ -228,13 +228,13 @@
 .gallery {
   column-count: 3;
   column-gap: 0;
+  row-gap: 0;
   padding: 80px 0;
   &__img {
+    float: left;
+    width: 100%;
     img {
       width: 100%;
-    }
-    &__img--heigth {
-      grid-row: span 2;
     }
   }
 }
