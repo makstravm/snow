@@ -87,9 +87,12 @@ exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(styles, scripts, browsersync, watching);
 
-const gulp = require("gulp");
-const ghPages = require("gulp-gh-pages");
+var gulp = require("gulp");
+var deploy = require("gulp-gh-pages");
 
+/**
+ * Push build to gh-pages
+ */
 gulp.task("deploy", function () {
-  return gulp.src("./dist/**/*").pipe(ghPages());
+  return gulp.src("./dist/**/*").pipe(deploy());
 });
